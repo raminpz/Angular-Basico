@@ -1,0 +1,32 @@
+<h3>
+  Agregar <small>{{ nuevo.nombre }}</small>
+</h3>
+<hr />
+
+<form (ngSubmit)="agregar()">
+  <!-- Este ngSubmit, es para cuando se haga click, no se recargue la pagina: LEER MÁS-->
+
+  <!-- Este value, vemos está con [], esto significa que va traer es dato desde ts, que esta declarado por defecto
+        [value]="nuevo.nombre" 
+        (input)="cambiarNombre( $event )"-->
+
+  <!-- Recordar (), es para emitir o escuchar enventos y [] es para establecer algun propiedad-->
+  <input
+    type="text"
+    placeholder="Nombre"
+    name="nombre"
+    [(ngModel)]="nuevo.nombre"
+  />
+  <!-- Lo mas adecuado es hacer usar [(ngModel)], envés de hacer como en el anterior arriab, aqui se esta usando
+    las dos [()] lo que significa que puede escuchar y emitar eventos al mismo tiempó-->
+
+  <input
+    type="text"
+    placeholder="Poder"
+    name="poder"
+    [(ngModel)]="nuevo.poder"
+  />
+  <!-- Aqui igual-->
+
+  <button type="submit">Agregar</button>
+</form>
