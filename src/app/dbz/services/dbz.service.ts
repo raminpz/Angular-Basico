@@ -4,6 +4,7 @@ import { Personaje } from '../interfaces/dbz.interface';
 @Injectable() // Indica que esto es una clase que se puede inyectar
 export class DbzService{ // export, para que pueda ser utilizado fuera de este archivo
 
+  // Propiedades
    private _personajes: Personaje[] = [
 
     {
@@ -16,14 +17,20 @@ export class DbzService{ // export, para que pueda ser utilizado fuera de este a
     }
   ];
 
-
+// Getter and Setters
 get personajes(): Personaje[]{
   return [...this._personajes];
 }
 
-  constructor() {
-    console.log('Servicio inicializado');
-  }
+//Constructor
+  constructor() {}
+
+//Metodos
+agregarPersonaje( personaje: Personaje){ //Con este metodo añadimos nuevos datos a _personajes
+  this._personajes.push( personaje );
+}
+
+
 
 
 }
